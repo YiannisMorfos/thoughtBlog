@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<% if (locals.posts && locals.posts.length > 0) { %>
+   <div class="all-posts-container">
+    <% posts.forEach(post => { %>
+        <div class="one-post-wrapper">
+            <div class="content-container">
+                <%const snippet = post.content.substring(0,250)%>
+                <a href="/post/<%=post.id%>"><h2><%= post.title %></h2></a>
+                <h3><%= snippet %>...</h3>
+            </div>
+        <div class="read-more"><a href="/post/<%=post.id%>"><i class="gg-maximize-alt"></i></a></div>
+    </div>
+    <% }); %>
+   </div>
+<% }else {%>
+    <div id="no-posts">
+        <p> No posts yet. <span><a href="/new">Add a new post</a></span></p>
+        <img src="images/noposts.png" alt="no posts yet">
+    </div>
+<% } %>
+
+<%- include("partials/footer.ejs") %>

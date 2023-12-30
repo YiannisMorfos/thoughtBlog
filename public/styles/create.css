@@ -1,0 +1,43 @@
+.new-post-container {
+    padding: 100px 0;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.new-post-container form {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    flex: 1;
+}
+
+.new-post-container form * {
+    margin: 15px 0;
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 25.2px 0px rgba(0, 0, 0, 0.25);
+}
+
+.new-post-container form .content {
+    height: 300px;
+    resize: none;
+}
+
+.new-post-container form ::placeholder {
+    opacity: 0.3;
+}
+
+.new-post-container form .submit-button{
+    max-width: fit-content;
+    padding-inline: 40px;
+    font-weight: 200;
+    font-size: 20px;
+    color: white;
+    background-color: #FF5C00;
+    align-self: flex-end;
+}

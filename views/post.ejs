@@ -1,0 +1,30 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="post-container">
+    <% if (locals.post) { %> 
+        <p id="date-posted">
+            <%= new Date(post.datePosted).toLocaleDateString("en-us",{day:'numeric', month: 'long', year: 'numeric'}) %>
+        </p>
+        <h1>
+            <%= post.title %>
+        </h1>
+        <p id="content">
+            <%- post.content %>
+        </p>
+    <div class="button-wrapper">
+        <form action = "/post/<%=post.id%>" method = "POST">
+            <input class = "delete button" type="submit" value="Delete post">
+        </form>
+            <a href="/edit-post/<%=post.id%>">
+                <button class = "edit button"> Edit post</button>
+            </a>
+    </div>
+    
+    <% }else { %>
+        <h1> The post no longer exists! </h1>
+    <% } %>
+</div>
+
+
+<%- include("partials/footer.ejs") %>
